@@ -26,6 +26,7 @@ function AppContent() {
     if (settings.notificationsEnabled) {
       requestNotificationPermission();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleDelete = (id: string) => {

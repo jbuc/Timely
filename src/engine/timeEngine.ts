@@ -45,12 +45,13 @@ export function getAlignedStart(timestamp: number, alignTo: TimeUnit): number {
     case 'days':
       date.setHours(0, 0, 0, 0);
       break;
-    case 'weeks':
+    case 'weeks': {
       date.setHours(0, 0, 0, 0);
       // Go back to Sunday (or configured start of week)
       const day = date.getDay();
       date.setDate(date.getDate() - day);
       break;
+    }
     case 'months':
       date.setDate(1);
       date.setHours(0, 0, 0, 0);
